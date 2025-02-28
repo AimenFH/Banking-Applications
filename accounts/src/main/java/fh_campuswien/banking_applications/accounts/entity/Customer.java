@@ -1,5 +1,6 @@
 package fh_campuswien.banking_applications.accounts.entity;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
