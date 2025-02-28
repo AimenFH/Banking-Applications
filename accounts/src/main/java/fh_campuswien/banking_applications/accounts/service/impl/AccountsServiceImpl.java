@@ -1,10 +1,13 @@
 package fh_campuswien.banking_applications.accounts.service.impl;
 
 import fh_campuswien.banking_applications.accounts.constants.AccountsConstants;
+import fh_campuswien.banking_applications.accounts.dto.AccountsDto;
 import fh_campuswien.banking_applications.accounts.dto.CustomerDto;
 import fh_campuswien.banking_applications.accounts.entity.Accounts;
 import fh_campuswien.banking_applications.accounts.entity.Customer;
 import fh_campuswien.banking_applications.accounts.exception.CustomerAlreadyExistsException;
+import fh_campuswien.banking_applications.accounts.exception.ResourceNotFoundException;
+import fh_campuswien.banking_applications.accounts.mapper.AccountsMapper;
 import fh_campuswien.banking_applications.accounts.mapper.CustomerMapper;
 import fh_campuswien.banking_applications.accounts.repository.AccountsRepository;
 import fh_campuswien.banking_applications.accounts.repository.CustomerRepository;
@@ -39,16 +42,16 @@ public class AccountsServiceImpl implements IAccountsService {
 
     @Override
     public CustomerDto fetchAccount(String mobileNumber) {
-        return null;
+        Customer customer = customerRepository.findByMobileNumber(mobileNumber).orElseThrow(
+                ()-> new ResourceNotFoundException("Customer", "mobileNumber", mobileNumber));
+
+        Accounts accounts = accountsRepository.findByCustomerId (customer.getCustomerId()).orElseThrow(
+                ()-> new ResourceNotFoundException("Account", "customerId", customer.getCustomerId().toString()));
+
+        CustomerDto customerDto = CustomerMapper.mapToCustomerDto(customer, new CustomerDto());
+        customerDto.setAccountsDto(AccountsMapper.mapToAccountsDto(accounts, new AccountsDto()));
+        return customerDto;
     }
-
-
-
-
-
-
-
-
 
     //// private
     private Accounts createNewAccount(Customer customer) {

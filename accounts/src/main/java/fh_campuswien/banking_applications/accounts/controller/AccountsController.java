@@ -3,6 +3,7 @@ package fh_campuswien.banking_applications.accounts.controller;
 import fh_campuswien.banking_applications.accounts.constants.AccountsConstants;
 import fh_campuswien.banking_applications.accounts.dto.CustomerDto;
 import fh_campuswien.banking_applications.accounts.dto.ResponseDto;
+import fh_campuswien.banking_applications.accounts.mapper.CustomerMapper;
 import fh_campuswien.banking_applications.accounts.service.IAccountsService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -25,7 +26,7 @@ public class AccountsController {
 
     @GetMapping("/fetch")
     public ResponseEntity<CustomerDto> fetchAccountDetails(@RequestParam String mobileNumber) {
-return null;
-
+        CustomerDto customerDto = iAccountsService.fetchAccount(mobileNumber);
+        return ResponseEntity.status(HttpStatus.OK).body(customerDto);
     }
 }
