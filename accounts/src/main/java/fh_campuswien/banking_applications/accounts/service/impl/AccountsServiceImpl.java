@@ -15,7 +15,6 @@ import fh_campuswien.banking_applications.accounts.service.IAccountsService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Random;
 
 @Service
@@ -34,8 +33,7 @@ public class AccountsServiceImpl implements IAccountsService {
                             ? "Customer already exists with this email." : "Customer already exists with this mobile number.";
                     throw new CustomerAlreadyExistsException(message);
                 });
-        customer.setCreatedAt(LocalDateTime.now());
-        customer.setCreatedBy("Aymen");
+
         Customer savedCustomer = customerRepository.save(customer);
         accountsRepository.save(createNewAccount(savedCustomer));
     }
@@ -86,7 +84,6 @@ public class AccountsServiceImpl implements IAccountsService {
     }
 
 
-
     /// / private
     private Accounts createNewAccount(Customer customer) {
         Accounts newAccount = new Accounts();
@@ -96,8 +93,6 @@ public class AccountsServiceImpl implements IAccountsService {
         newAccount.setAccountNumber(randomAccNumber);
         newAccount.setAccountType(AccountsConstants.SAVINGS);
         newAccount.setBranchAddress(AccountsConstants.ADDRESS);
-        newAccount.setCreatedAt(LocalDateTime.now());
-        newAccount.setCreatedBy("Aymen");
         return newAccount;
     }
 }
