@@ -1,0 +1,11 @@
+mvn clean install
+mvn spring-boot:run
+docker build . -t aimendocker/accounts:s4
+docker image
+docker inspect 883f654de054
+docker run -p 8080:8080 aimendocker/accounts:s4
+docker run -d -p 8080:8080 aimendocker/accounts:s4
+------------------------------------------------------------
+
+Builderpacks
+mvn spring-boot:build-image
