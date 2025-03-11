@@ -1,6 +1,7 @@
 package fh_campuswien.banking_applications.cards.controller;
 
 import fh_campuswien.banking_applications.cards.constants.CardsConstants;
+import fh_campuswien.banking_applications.cards.dto.CardsContactInfoDto;
 import fh_campuswien.banking_applications.cards.dto.CardsDto;
 import fh_campuswien.banking_applications.cards.dto.ErrorResponseDto;
 import fh_campuswien.banking_applications.cards.dto.ResponseDto;
@@ -13,7 +14,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -27,11 +31,17 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "CRUD REST APIs for Cards")
 @RestController
 @RequestMapping(path = "/api/v1/cards", produces = {MediaType.APPLICATION_JSON_VALUE})
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Validated
+@EnableConfigurationProperties(value = CardsContactInfoDto.class)
 public class CardsController {
 
-    private ICardsService iCardsService;
+    private final ICardsService iCardsService;
+    private final CardsContactInfoDto cardsContactInfoDto;
+    private final Environment environment;
+
+    @Value("${build.version}")
+    private String buildVersion;
 
     @Operation(summary = "Create Card REST API")
     @ApiResponses({
@@ -147,5 +157,65 @@ public class CardsController {
                     .status(HttpStatus.EXPECTATION_FAILED)
                     .body(new ResponseDto(CardsConstants.STATUS_417, CardsConstants.MESSAGE_417_DELETE));
         }
+    }
+
+    @Operation(summary = "get build informaton")
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status Ok"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/build-info")
+    public ResponseEntity<String> getBuildInfo() {
+        return ResponseEntity.status(HttpStatus.OK).body(buildVersion);
+    }
+
+    @Operation(summary = "get Java version")
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status Ok"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/java-version")
+    public ResponseEntity<String> getJavaVersion() {
+        return ResponseEntity.status(HttpStatus.OK).body(environment.getProperty("JAVA_HOME"));
+    }
+
+    @Operation(summary = "get contact information")
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status Ok"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/contact-info")
+    public ResponseEntity<CardsContactInfoDto> getContactInfo() {
+        return ResponseEntity.status(HttpStatus.OK).body(cardsContactInfoDto);
     }
 }
