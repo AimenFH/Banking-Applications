@@ -1,0 +1,16 @@
+fh_campuswien\banking_applications\accounts\loans\exception\ResourceNotFoundException.class
+fh_campuswien\banking_applications\accounts\loans\audit\AuditAwareImpl.class
+fh_campuswien\banking_applications\accounts\loans\LoansApplication.class
+fh_campuswien\banking_applications\accounts\loans\service\impl\LoansServiceImpl.class
+fh_campuswien\banking_applications\accounts\loans\entity\BaseEntity.class
+fh_campuswien\banking_applications\accounts\loans\service\ILoansService.class
+fh_campuswien\banking_applications\accounts\loans\dto\ResponseDto.class
+fh_campuswien\banking_applications\accounts\loans\mapper\LoansMapper.class
+fh_campuswien\banking_applications\accounts\loans\dto\LoansDto.class
+fh_campuswien\banking_applications\accounts\loans\exception\LoanAlreadyExistsException.class
+fh_campuswien\banking_applications\accounts\loans\repository\LoansRepository.class
+fh_campuswien\banking_applications\accounts\loans\constants\LoansConstants.class
+fh_campuswien\banking_applications\accounts\loans\dto\ErrorResponseDto.class
+fh_campuswien\banking_applications\accounts\loans\exception\GlobalExceptionHandler.class
+fh_campuswien\banking_applications\accounts\loans\controller\LoansController.class
+fh_campuswien\banking_applications\accounts\loans\entity\Loans.class
