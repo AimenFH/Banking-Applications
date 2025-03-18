@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: "gatewayserver"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+
+
+
+
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: "guest"
+#    password: "guest"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      access: unrestricted
+  info:
+    env:
+      enabled: true
+info:
+  app:
+    name: "gatewayserver"
+    description: "Gateway Server Application"
+    version: "1.0.0"
