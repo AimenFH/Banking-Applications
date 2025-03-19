@@ -7,10 +7,8 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true
-
-
-
+          enabled: false
+          lower-case-service-id: true
 
 #  rabbitmq:
 #    host: localhost
@@ -34,3 +32,13 @@ info:
     name: "gatewayserver"
     description: "Gateway Server Application"
     version: "1.0.0"
+
+logging:
+  level:
+    fh_campuswien:
+        banking_applications:
+            gatewayserver: DEBUG
+
+
+
+

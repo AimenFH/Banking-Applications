@@ -4,5 +4,5 @@ import fh_campuswien.banking_applications.accounts.dto.CustomerDetailsDto;
 
 public interface ICustomersService {
 
-    CustomerDetailsDto fetchCustomerDetails(String mobileNumber);
+    CustomerDetailsDto fetchCustomerDetails(String correlationId, String mobileNumber);
 }
