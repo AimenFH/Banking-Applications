@@ -1,0 +1,16 @@
+spring:
+  config:
+    activate:
+      on-profile: "qa"
+
+build:
+  version: "2.0"
+
+accounts:
+  message: "Welcome to the Loans service test API"
+  contactDetails:
+    name: "Ayman - Developer"
+    email: "aymanDEV.com"
+  onCallSupport:
+    - (04) 666-1234
+    - (40) 666-1345
