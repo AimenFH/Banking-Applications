@@ -65,8 +65,8 @@ info:
 logging:
   level:
     fh_campuswien:
-      banking_applications:
-        loans: DEBUG
+        banking_applications:
+            loans: DEBUG
 
 
 

@@ -9,6 +9,9 @@ spring:
         locator:
           enabled: false
           lower-case-service-id: true
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 2s
 
 #  rabbitmq:
 #    host: localhost

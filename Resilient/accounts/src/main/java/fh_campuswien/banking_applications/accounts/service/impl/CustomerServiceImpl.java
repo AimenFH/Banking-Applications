@@ -15,7 +15,6 @@ import fh_campuswien.banking_applications.accounts.service.ICustomersService;
 import fh_campuswien.banking_applications.accounts.service.client.CardsFeignClient;
 import fh_campuswien.banking_applications.accounts.service.client.LoansFeignClient;
 import lombok.AllArgsConstructor;
-import lombok.Setter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +30,7 @@ public class CustomerServiceImpl implements ICustomersService {
 
 
     @Override
-    public CustomerDetailsDto fetchCustomerDetails(String correlationId,String mobileNumber) {
+    public CustomerDetailsDto fetchCustomerDetails(String correlationId, String mobileNumber) {
         Customer customer = customerRepository.findByMobileNumber(mobileNumber).orElseThrow(
                 () -> new ResourceNotFoundException("Customer", "mobileNumber", mobileNumber));
 
@@ -42,11 +41,14 @@ public class CustomerServiceImpl implements ICustomersService {
         customerDetailsDto.setAccountsDto(AccountsMapper.mapToAccountsDto(accounts, new AccountsDto()));
 
         ResponseEntity<LoansDto> loansDtoResponseEntity = loansFeignClient.fetchLoanDetails(correlationId, mobileNumber);
-        customerDetailsDto.setLoansDto(loansDtoResponseEntity.getBody());
+        if (null != loansDtoResponseEntity) {
+            customerDetailsDto.setLoansDto(loansDtoResponseEntity.getBody());
 
-        ResponseEntity<CardsDto> cardsDtoResponseEntity = cardsFeignClient.fetchCardDetails(correlationId, mobileNumber);
-        customerDetailsDto.setCardsDto(cardsDtoResponseEntity.getBody());
-
+        }
+            ResponseEntity<CardsDto> cardsDtoResponseEntity = cardsFeignClient.fetchCardDetails(correlationId, mobileNumber);
+        if (null != cardsDtoResponseEntity) {
+            customerDetailsDto.setCardsDto(cardsDtoResponseEntity.getBody());
+        }
         return customerDetailsDto;
     }
 }
