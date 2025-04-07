@@ -17,3 +17,5 @@ docker run -p 3309:3306 --name loansdb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATA
 
 docker run -p 3308:3306 --name cardsdb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=cardsdb -d mysql
 .....................................................
+
+http://localhost:8080/actuator/metrics
