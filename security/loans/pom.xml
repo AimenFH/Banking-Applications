@@ -132,11 +132,10 @@
                 <version>3.4.2</version>
                 <configuration>
                     <to>
-                        <image>aimendocker/${project.artifactId}:s11</image>
+                        <image>aimendocker/${project.artifactId}:s12</image>
                     </to>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
