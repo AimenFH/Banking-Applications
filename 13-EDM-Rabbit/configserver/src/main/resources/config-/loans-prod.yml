@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to the Loans service Production API"
+  contactDetails:
+    name: "Ayman - Developer"
+    email: "aymanDEV.com"
+  onCallSupport:
+    - (04) 666-1234 456
+    - (04) 666-1345 323
