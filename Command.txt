@@ -23,3 +23,15 @@ http://localhost:8080/actuator/metrics
 bankapplication-callcernter-cc
 ...............................................
 kubectl -n kubernetes-dashboard create token admin-user
+
+1- helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
+2- helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard
+3- kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy 8443:443
+4-helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard --set kong.admin.tls.enabled=false
+5- copy link from chat 
+for token 
+1-kubectl apply -f dashboard-adminuser.yaml
+2-kubectl apply -f dashboard-rolebinding.yaml
+3- kubectl -n kubernetes-dashboard create token admin-user
+
+

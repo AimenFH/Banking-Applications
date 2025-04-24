@@ -5,7 +5,7 @@ metadata:
   labels:
     app: configserver
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: configserver
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: configserver
-        image: eazybytes/configserver:s12
+        image: aimendocker/configserver:s12
         ports:
         - containerPort: 8071
 ---
