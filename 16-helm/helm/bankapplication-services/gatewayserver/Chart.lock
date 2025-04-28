@@ -1,0 +1,6 @@
+dependencies:
+- name: bankapplication-common
+  repository: file://../../bankapplication-common
+  version: 0.1.0
+digest: sha256:3a607af1e7d42aa856b81edc4bbd6ac1c6ed149a4e1175906db3643016efb0e4
+generated: "2025-04-24T22:21:03.8446745+02:00"
