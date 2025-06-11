@@ -1,0 +1,11 @@
+build:
+  version: "3.0"
+
+cards:
+  message: "Welcome to the Accounts service API"
+  contactDetails:
+    name: "Ayman - Developer"
+    email: "aymanDEV.com"
+  onCallSupport:
+    - (555) 555-1234
+    - (555) 523-1345
