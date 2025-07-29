@@ -43,10 +43,6 @@ public class AccountsController {
     private final AccountsContactInfoDto accountsContactInfoDto;
     private static final Logger logger = LoggerFactory.getLogger(AccountsController.class);
 
-
-
-
-
     @Operation(summary = "Create a new account")
     @ApiResponses({
             @ApiResponse(
