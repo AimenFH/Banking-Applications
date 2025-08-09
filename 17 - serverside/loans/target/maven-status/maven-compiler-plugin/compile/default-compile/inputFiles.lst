@@ -1,17 +1,17 @@
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\audit\AuditAwareImpl.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\constants\LoansConstants.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\controller\LoansController.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\dto\ErrorResponseDto.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\dto\LoansContactInfoDto.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\dto\LoansDto.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\dto\ResponseDto.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\entity\BaseEntity.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\entity\Loans.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\exception\GlobalExceptionHandler.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\exception\LoanAlreadyExistsException.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\exception\ResourceNotFoundException.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\LoansApplication.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\mapper\LoansMapper.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\repository\LoansRepository.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\service\ILoansService.java
-H:\Git\Banking-Applications\14-Kafka\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\service\impl\LoansServiceImpl.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\audit\AuditAwareImpl.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\constants\LoansConstants.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\controller\LoansController.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\dto\ErrorResponseDto.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\dto\LoansContactInfoDto.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\dto\LoansDto.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\dto\ResponseDto.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\entity\BaseEntity.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\entity\Loans.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\exception\GlobalExceptionHandler.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\exception\LoanAlreadyExistsException.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\exception\ResourceNotFoundException.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\LoansApplication.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\mapper\LoansMapper.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\repository\LoansRepository.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\service\ILoansService.java
+H:\Git\Banking-Applications\17 - serverside\loans\src\main\java\fh_campuswien\banking_applications\accounts\loans\service\impl\LoansServiceImpl.java
