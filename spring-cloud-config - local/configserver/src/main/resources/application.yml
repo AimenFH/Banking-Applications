@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: "configserver"
+  profiles:
+    active: git
+  # active: native
+  cloud:
+    config:
+      server:
+         native:
+             search-locations: "file:///H://Git//Banking-Applications//config"
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: "guest"
+    password: "guest"
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+
+encrypt:
+  key: "5454545Test5454549876"
+
+server:
+  port: 8071
