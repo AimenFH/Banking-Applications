@@ -10,6 +10,18 @@ docker inspect 883f654de054
 docker run -p 8080:8080 aimendocker/accounts:s4
 docker run -d -p 8080:8080 aimendocker/accounts:s4
 ------------------------------------------------------------
+http://localhost:8080/actuator
+-----------------------------------------
 
 Builderpacks
 mvn spring-boot:build-image
+-----------------------------------------------
+circuitbreakers
+http://localhost:8072/actuator/circuitbreakers
+http://localhost:8072/actuator/circuitbreakerevents/{name}
+http://localhost:8072/actuator/circuitbreakerevents?name=accountsCircuitBreaker
+
+
+
+Evaluating the Impact of Centralized Configuration 
+Management on Microservices

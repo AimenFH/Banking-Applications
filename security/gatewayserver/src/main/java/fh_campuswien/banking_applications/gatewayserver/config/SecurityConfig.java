@@ -22,6 +22,7 @@ public class SecurityConfig {
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity serverHttpSecurity) {
         serverHttpSecurity.authorizeExchange(exchanges -> exchanges.pathMatchers(HttpMethod.GET).permitAll()
                         .pathMatchers("/campuswien-banking/accounts/**").hasRole("ACCOUNTS")
+                        .pathMatchers("/campuswien-banking/accounts/**").hasRole("accRoles")
                         .pathMatchers("/campuswien-banking/cards/**").hasRole("CARDS")
                         .pathMatchers("/campuswien-banking/loans/**").hasRole("LOANS"))
                 .oauth2ResourceServer(oAuth2ResourceServerSpec -> oAuth2ResourceServerSpec
